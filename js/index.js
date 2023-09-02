@@ -5,7 +5,16 @@ const loadData = async (id) => {
     displayCard(videos)
 }
 loadData(1000);
-
+const sortData = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+    const data = await res.json();
+    const videos = data.data;
+    function sort(videos){
+        return  videos.sort((b, a) => parseFloat(a.others.views) - parseFloat(b.others.views));
+    }
+    const sortDataArray = sort(videos);
+    displayCard(sortDataArray);
+}
 const displayCard = (videos) => {
     const cardContainer = document.getElementById('card-container')
     cardContainer.textContent = '';
@@ -65,26 +74,33 @@ const displayCard = (videos) => {
 
 
 
-
-
+let sortDataId = 1000;
 const buttonAll = (id) => {
     loadData(id);
+    sortDataId = 1000;
 }
 const buttonMusic = (id) => {
     loadData(id);
+    sortDataId = 1001;
 }
 const buttonComedy = (id) => {
     loadData(id);
+    sortDataId = 1003;
 }
 const buttonDrawing = (id) => {
     loadData(id);
+    sortDataId = 1005;
+}
+const btnSort = () => {
+    sortDataId = sortDataId;
+    sortData(sortDataId);
 }
 
 
 const buttonContainer = document.getElementById('button-container')
 buttonContainer.innerHTML = `
 <div class="flex justify-center gap-5">
-        <button onclick="buttonAll(1000)" class="bg-gray-300 px-5 text-xl p-2 rounded-md">All</button>
+        <button onclick="buttonAll(1000)" class="bg-gray-300 hover:bg-red-500 text-white px-5 text-xl p-2 rounded-md">All</button>
         <button onclick="buttonMusic(1001)" class="bg-gray-300 px-5 text-xl rounded-md">Music</button>
         <button onclick="buttonComedy(1003)" class="bg-gray-300 px-5 text-xl rounded-md"> Comedy</button>
         <button onclick="buttonDrawing(1005)" class="bg-gray-300 px-5 text-xl rounded-md">Drawing</button>
@@ -93,8 +109,8 @@ buttonContainer.innerHTML = `
 const navContainer = document.getElementById('nav-container');
 navContainer.innerHTML = `
     <div class="flex justify-center mt-4 mx-5">
-    <div class="w-full flex justify-start"><img src="logo/Logo.png" alt=""></div>
-    <div class="w-full flex justify-center"><p class="bg-gray-300 p-3 font-semibold text-xl rounded-md"> sort by view </p></div>
-    <div class="w-full flex justify-end"><a href="./page/blog.html"><button class="bg-orange-400 p-4 text-xl px-3xl rounded-md ">Blog</button></a></div>
+    <div class="w-full flex justify-start   "><img src="logo/Logo.png" alt=""></div>
+    <div class="w-full flex justify-center"><p onclick="btnSort()" class="bg-gray-300 px-3 pt-2 text-center font-semibold text-xl rounded-md"> sort by view </p></div>
+    <div class="w-full flex justify-end"><a href="./page/blog.html"><button class="bg-red-500 px-3 py-2 text-xl text-white px-3xl rounded-md ">Blog</button></a></div>
     </div>
 `

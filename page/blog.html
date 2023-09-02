@@ -1,18 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <section>
-        <h1 class="text-4xl text-lime-400 font-bold text-center mt-10">Welcome to my Blog</h1>
-    </section>
-</body>
+    <body class="mx-auto font-inter">
+        <h3 class="text-4xl text-center font-semibold  mt-4">Discussing the scope of <br> <span
+                class="text-4xl font-semibold text-green-500"> Var</span><span class="text-4xl font-semibold text-blue-500">
+                Let</span><span class="text-4xl font-semibold text-lime-500"> Const</span></h3>
+        <div class="flex justify-center flex-col items-center mt-8 font-semibold gap-4 ">
+            <div class="border rounded-sm  w-96 p-5">
+                <h3 class="text-2xl text-center rounded-md bg-red-300">Var</h3>
+                <p>1 : Variables are declared in JavaScript using var.</p>
+                <p>2 : Variables declared with var are function-scoped, meaning they are only accessible within the function
+                    in which they are declared or globally if declared outside of any function.</p>
+            </div>
+            <div class="border rounded-sm w-96 p-5">
+                <h3 class="text-2xl text-center rounded-md bg-blue-300">Let</h3>
+                <p>1 : let was introduced in ECMAScript 6 (ES6) to provide block-scoped variables.</p>
+                <p>2 : Variables declared with let are block-scoped, which means they are only accessible within the nearest
+                    enclosing block, such as a function, loop, or conditional statement.</p>
+            </div>
+            <div class="border rounded-sm w-96  p-5">
+                <h3 class="text-2xl text-center rounded-md bg-green-300">Const</h3>
+                <p>1 : const is also introduced in ES6, and it is used to declare constants, which cannot be reassigned
+                    after they are defined.</p>
+                </p>
+                <p>3 : const variables must be initialized when declared and cannot be reassigned, although the value they
+                    hold can still be mutable if it's an object or array.</p>
+            </div>
+        </div>
+        <div class="">
+            <h3 class="text-4xl text-center font-semibold text-orange-300 mt-4">Discussing the use cases of <br> <span
+                    class="text-4xl font-semibold text-red-500"> null</span><span
+                    class="text-4xl font-semibold text-blue-500">
+                    and</span><span class="text-4xl font-semibold text-green-500"> undefined</span></h3>
+        </div>
+        <div class="w-2/3 border mx-auto p-5 rounded-sm mt-4">
+            <h2 class="text-2xl text-center rounded-md bg-red-300 font-semibold">Null</h2>
+            <h5 class="text-lg font-bold">1 : Explicitly Indicating Absence of a Value:</h5>
+            <p> I : null is often used when you want to explicitly indicate that a variable or object property does not have
+                a meaningful value or has no value at all.</p>
+            <p> II : It is commonly used to initialize variables before they are assigned an actual value.</p>
+            <h5 class="text-lg font-bold">2 : As a Placeholder for a Missing Object Property:</h5>
+            <p> I : You might set an object property to null when it should exist but doesn't have a valid value yet.</p>
+            <h2 class="text-2xl text-center rounded-md bg-blue-300 font-semibold mt-4">Undefined</h2>
+            <h5 class="text-lg font-bold">1 : Implicit Absence of Value:</h5>
+            <p>I : undefined is the default value of uninitialized variables. When a variable is declared but not assigned a
+                value, it is automatically assigned undefined</p>
+            
+            <h5 class="text-lg font-bold">2 : Function Return Values:</h5>
+            <p>I : If a function doesn't return a value explicitly, it implicitly returns undefined.</p>
+            
+            <h5 class="text-lg font-bold">3 : Accessing Non-existent Object Properties:</h5>
+            <p>I : When you attempt to access an object property that doesn't exist, the result is undefined.</p>
+            
+        </div>
+        <div class="">
+            <h3 class="text-4xl text-center font-semibold text-orange-300 mt-4">What does REST API mean?</h3>
+            <div class="w-1/2 rounded-sm p-5 mt-4 border mx-auto">
+                <p class="bg-yellow-100 p-5 rounded-sm text-justify">REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style and a set of constraints for designing networked applications. REST is not a specific technology or protocol; rather, it is a set of principles and guidelines that define how web services should be structured and how they should interact with each other.
 
+                    The key principles of REST include:
+                    
+                    1. **Statelessness:** Each request from a client to a server must contain all the information needed to understand and process the request. The server should not rely on any information from previous requests. This makes REST APIs scalable and easy to cache.
+                    
+                    2. **Client-Server:** The client and server should be separate entities that can evolve independently. This separation of concerns allows for greater flexibility and scalability in the system.
+                    
+                    3. **Uniform Interface:** RESTful APIs should have a consistent and uniform set of interactions, which are typically based on HTTP methods (GET, POST, PUT, DELETE) and standard conventions for resource URIs.
+                    
+                    </p>
+            </div>
+        </div>
+    </body>
+</body>
 </html>
